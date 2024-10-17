@@ -43,7 +43,7 @@ CREATE TABLE classroom(
 
 CREATE TABLE class(
 	faculty varchar(20) NOT NULL REFERENCES faculty(code)  ON DELETE CASCADE ON UPDATE CASCADE,
-	room varchar(10) NOT NULL REFERENCES classroom(room)  ON UPDATE CASCADE,
+	room varchar(100) NOT NULL REFERENCES classroom(room)  ON UPDATE CASCADE,
 	sec     varchar(10) NOT NULL REFERENCES section(sec)  ON DELETE CASCADE ON UPDATE CASCADE,
 	slot INTEGER NOT NULL,
 	"day" INTEGER NOT NULL
