@@ -17,7 +17,7 @@ const sectionRoutine = async (req, res) => {
     {
       let temp = user.rows[i];
       let cnt = 1;
-      while( (i + 1) < user.rows.length && user.rows[i + 1].code == temp.code && user.rows[i + 1].room == temp.room && user.rows[i + 1].faculty == temp.faculty  )
+      while( (i + 1) < user.rows.length && user.rows[i + 1].day == temp.day && user.rows[i + 1].code == temp.code && user.rows[i + 1].room == temp.room && user.rows[i + 1].faculty == temp.faculty  )
       {
         ++i;
         ++cnt;
