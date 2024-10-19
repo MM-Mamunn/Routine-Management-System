@@ -7,7 +7,7 @@ dotenv.config();
 // Middleware to verify the token
 export default function(req, res, next) {
   // Get token from the header
-  const token = req.header("jwt_token");
+  const token = req.header("jwtToken");
 
   // Check if token is not provided
   if (!token) {

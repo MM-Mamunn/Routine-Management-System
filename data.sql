@@ -577,4 +577,144 @@ VALUES
 ('MKH_CUET', 'CX403', '2GM', 3, 0, 'EEE-1221'),
 ('MKH_CUET', 'CX203', '2GM', 4, 0, 'EEE-1222'),
 ('MKH_CUET', 'CX203', '2GM', 5, 0, 'EEE-1222'),
-('MKH_CUET', 'CX203', '2GM', 6, 0, 'EEE-1222');
+('MKH_CUET', 'CX203', '2GM', 6, 0, 'EEE-1222'),
+
+
+-- New entries for 3AM
+('DMMA', 'C503', '3AM', 1, 0, 'STAT-2311'),
+('DMMA', 'C503', '3AM', 2, 0, 'STAT-2311'),
+('MHMNS_MDP', 'C501', '3AM', 4, 0, 'MDP-2303'),
+('AMA_Adj', 'C501', '3AM', 4, 0, 'CSE-2340'),
+('AMA_Adj', 'C501', '3AM', 5, 0, 'CSE-2340'),
+
+-- New entries for 3BM
+('MMF_Adj', 'C501', '3BM', 1, 0, 'CSE-2340'),
+('MMF_Adj', 'C501', '3BM', 2, 0, 'CSE-2340'),
+('MHMNS_MDP', 'C501', '3BM', 3, 0, 'MDP-2303'),
+('DMMA', 'CX103', '3BM', 4, 0, 'STAT-2311'),
+('DMMA', 'CX103', '3BM', 5, 0, 'STAT-2311'),
+
+-- New entries for 3CM
+('SS_Adj', 'CX505', '3CM', 1, 0, 'CSE-2323'),
+('DMJH_NSTU', 'CX505', '3CM', 4, 0, 'MATH-2307'),
+('DMJH_NSTU', 'CX505', '3CM', 5, 0, 'MATH-2307'),
+('DMJH_NSTU', 'CX505', '3CM', 6, 0, 'MATH-2307'),
+
+-- New entries for 3DM
+('MRM_Adj', 'CX103', '3DM', 1, 0, 'CSE-2323'),
+('MAU_CU', 'CXB202', '3DM', 4, 0, 'CHEM-2301'),
+('MAU_CU', 'CXB202', '3DM', 5, 0, 'CHEM-2301'),
+('MAU_CU', 'CXB202', '3DM', 6, 0, 'CHEM-2301'),
+
+-- New entries for 3EM
+('MAU_CU', 'CX104', '3EM', 1, 0, 'CHEM-2301'),
+('MAU_CU', 'CX104', '3EM', 2, 0, 'CHEM-2301'),
+('MAU_CU', 'CX104', '3EM', 3, 0, 'CHEM-2301'),
+('MRM_Adj', 'CXB101', '3EM', 5, 0, 'CSE-2323'),
+('MRM_Adj', 'CXB101', '3EM', 6, 0, 'CSE-2323'),
+
+-- New entries for 3FM
+('SAI', 'C401', '3FM', 1, 0, 'CSE-2340'),
+('SAI', 'C401', '3FM', 2, 0, 'CSE-2340'),
+('NUA_Adj', 'C401', '3FM', 3, 0, 'CSE-2321'),
+('DAFMS_CU', 'CXB103', '3FM', 4, 0, 'CHEM-2301'),
+('DAFMS_CU', 'CXB103', '3FM', 5, 0, 'CHEM-2301'),
+('DAFMS_CU', 'CXB103', '3FM', 6, 0, 'CHEM-2301'),
+
+-- New entries for 3GM
+('DAFMS_CU', 'CXB104', '3GM', 1, 0, 'CHEM-2301'),
+('DAFMS_CU', 'CXB104', '3GM', 2, 0, 'CHEM-2301'),
+('DAFMS_CU', 'CXB104', '3GM', 3, 0, 'CHEM-2301'),
+('MRI', 'C503', '3GM', 4, 0, 'MATH-2307'),
+('MNU_ADJ', 'C201', '3GM', 5, 0, 'CSE-2340'),
+('MNU_ADJ', 'C201', '3GM', 6, 0, 'CSE-2340'),
+
+-- Entries for 4AM
+('RZ', 'C102', '4AM', 1, 0, 'CSE-2423'),
+('RZ', 'C102', '4AM', 2, 0, 'CSE-2423'),
+
+-- Entries for 4BM
+('RU_CU', 'CX501', '4BM', 1, 0, 'CSE-2427'),
+('RU_CU', 'CX501', '4BM', 2, 0, 'CSE-2427'),
+
+--4CM
+('MKIS', 'CX102', '4CM', 1, 0, 'MDP-2404'),
+('NT_BNG1_CGED', 'CX102', '4CM', 3, 0, 'GEBL-2401'),
+
+-- Entries for 4DM
+('CMA_ADJ', 'CX603', '4DM', 1, 0, 'CSE-2427'),
+('CMA_ADJ', 'CX603', '4DM', 2, 0, 'CSE-2427'),
+('CMA_ADJ', 'CX603', '4DM', 3, 0, 'CSE-2427'),
+
+-- Entries for 4EM
+('AS', 'C201', '4EM', 1, 0, 'CSE-2422'),
+('AS', 'C201', '4EM', 2, 0, 'CSE-2422'),
+
+-- Entries for 5AM
+('DM_MI', 'C504', '5AM', 1, 0, 'CSE-3529'),
+('DM_MI', 'C504', '5AM', 2, 0, 'CSE-3529'),
+
+-- Entries for 5BM
+('SYIB_ADJ', 'CX302', '5BM', 1, 0, 'EEE-2421'),
+('SYIB_ADJ', 'CX302', '5BM', 2, 0, 'EEE-2421'),
+
+-- Entries for 5CM
+('MTA', 'CX201', '5CM', 1, 0, 'EEE-2421'),
+('MNU_ADJ', 'CX201', '5CM', 2, 0, 'CSE-3532'),
+('MNU_ADJ', 'CX201', '5CM', 3, 0, 'CSE-3532'),
+
+-- Entries for 5DM
+('MRM_ADJ', 'CX401', '5DM', 2, 0, 'CSE-3524'),
+('MRM_ADJ', 'CX401', '5DM', 3, 0, 'CSE-3524'),
+
+-- Entries for 5EM
+('JAA', 'C301', '5EM', 1, 0, 'CSE-3532'),
+('JAA', 'C301', '5EM', 2, 0, 'CSE-3532'),
+('DSAT_BBA', 'C105', '5EM', 3, 0, 'CSE-3529'),
+
+-- Entries for 6AM
+('DSA', 'CX101', '6AM', 1, 0, 'ECON-3501'),
+('DSH_CU', 'CX101', '6AM', 2, 0, 'CSE-3635'),
+
+-- Entries for 6BM
+('AMA_Adj', 'CX504', '6BM', 1, 0, 'CSE-3637'),
+('ANC_CU', 'CX204', '6BM', 2, 0, 'CSE-3636'),
+('ANC_CU', 'CX204', '6BM', 3, 0, 'CSE-3636'),
+
+-- Entries for 6CM
+('MMH_CGED', 'CXB204', '6CM', 1, 0, 'GEHE-3601'),  
+
+-- Entries for 6DM
+('SV_IND', 'CX601', '6DM', 1, 0, 'CSE-3640'),
+('SV_IND', 'CX601', '6DM', 2, 0, 'CSE-3640'),
+('SV_IND', 'CX601', '6DM', 3, 0, 'CSE-3640'),
+('CSV_IND', 'CX601', '6DM', 1, 0, 'CSE-3638'),
+('CSV_IND', 'CX601', '6DM', 2, 0, 'CSE-3638'),
+('CSV_IND', 'CX601', '6DM', 3, 0, 'CSE-3638'),
+
+--6SM 
+('NotDefined', 'CXB204', '6SM', 1, 0, 'CSE-3637'), -- teacher name not found
+
+-- Entries for 7AM
+('MMU', 'C101', '7AM', 1, 0, 'CSE-4878'),
+('MMU', 'C101', '7AM', 2, 0, 'CSE-4878'),
+
+-- Entries for 7BM
+('MMH', 'CXB103', '7BM', 1, 0, 'CSE-4741'),
+('MI_ADJ', 'CXB103', '7BM', 2, 0, 'CSE-3633'),
+('MI_ADJ', 'CXB103', '7BM', 3, 0, 'CSE-3633'),
+
+-- Entries for 7CM
+('AI', 'CXB103', '7CM', 1, 0, 'CSE-4746'),
+('AI', 'CXB103', '7CM', 2, 0, 'CSE-4746'),
+
+--8AM
+('PDMMS_CGED', 'CX202', '8AM', 2, 0, 'URBS-4802'),
+( 'MK', 'CX201', '8AM', 4, 0, 'CSE-4875'),
+( 'MK', 'CX201', '8AM', 5, 0, 'CSE-4876'),
+( 'MK', 'CX201', '8AM', 6, 0, 'CSE-4876'),
+--8BM
+('PDMMS_CGED', 'CX503', '8BM', 3, 0, 'URBS-4802'),
+( 'TR', 'CX602', '8BM', 4, 0, 'CSE-4744'),
+( 'TR', 'CX602', '8BM', 5, 0, 'CSE-4744');
+
