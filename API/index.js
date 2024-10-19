@@ -5,11 +5,11 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import pool from "./db.js";
 import register from "./routes/registration.route.js";
-import test from "./routes/studentCourseInsert.route.js";
+import studentCourseInsert from "./routes/studentCourseInsert.route.js";
 import login from "./routes/login.route.js";
 import courseLookLike from "./routes/LookLike.route.js";
-import sectionRoutine from "./routes/sectionRoutes/section.route.js";
-const router = express.Router();
+import sectionRoutine from "./routes/sectionRoutine.route.js";
+import  personalRoutine from "./routes/personalRoutine.route.js";
 
 const app = express();
 const port = 3000;
@@ -24,9 +24,10 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/register", register);
-app.use("/api/student_course_insert", test);
+app.use("/api/student_course_insert", studentCourseInsert);
 app.use("/api/login", login);
 app.use("/api/section", sectionRoutine);
+app.use("/api/student", personalRoutine);
 app.use("/api/lookLike", courseLookLike);
 
 // app.get('/data', async (req, res) => {

@@ -28,7 +28,7 @@ const login =async (req,res)=> {
     if (!validPassword) {
       return res.status(401).json("Invalid Credential 3");
     }
-    const jwtToken = jwtGenerator(user.rows[0].id);
+    const jwtToken = jwtGenerator(user.rows[0].id,user.rows[0].type);
     return res.json({ jwtToken });
   } catch (err) {
     console.error(err.message);

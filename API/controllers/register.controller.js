@@ -29,7 +29,7 @@ const register= async(req,res)=>{
       [id,bcryptPassword,name,section]
     );
 
-    const jwtToken = jwtGenerator(newUser.rows[0].id);
+    const jwtToken = jwtGenerator(newUser.rows[0].id,newUser.rows[0].type);
 
     return res.json({ jwtToken });
   } catch (err) {

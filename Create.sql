@@ -14,7 +14,7 @@ CREATE TABLE faculty(
 	code varchar(200) NOT NULL  PRIMARY KEY,
 	name varchar(50),
 	desig varchar(200),
-	phone varchar(20),
+	phone varchar(50),
 	email varchar(40),
 	type varchar(50) 
 );
@@ -63,14 +63,13 @@ CREATE TABLE student(
 	sec varchar(10) NOT NULL REFERENCES "section"(sec),
 	phone varchar(20),
 	email varchar(40),
-	type varchar(50) 
+	type varchar(50) default 'student'
 );
-
-
 
 
 
 CREATE TABLE student_course(
 	id varchar(20) not null REFERENCES student(id) on delete cascade on update cascade,
-	class_id SERIAL NOT NULL REFERENCES "class"(class_id) on delete cascade on update cascade
+code varchar(20) NOT NULL REFERENCES course(code) on delete cascade on update cascade,
+	sec varchar(10) NOT NULL REFERENCES section(sec) on delete cascade on update cascade
 );
