@@ -1,21 +1,14 @@
 import axios from "axios";
-
+import Nav1 from "./components/Nav1";
 import React, { useState, useEffect } from 'react';
 
 const Login = () => {
   const [schedule, setSchedule] = useState([]);
-
+  const [show,setshow]= useState(0);
+  const [search,setSearch] = useState("")
 
   useEffect(() => {
-    axios
-        .get("http://127.0.0.1:3000/api/section/fullroutine/1AM")
-        .then((res) => {
-            setSchedule(res.data.rows);
-            console.log(res.data.rows);
-        })
-        .catch((error) => {
-            console.error("Error fetching data:", error);
-        });
+
 }, []);
 
 
@@ -43,9 +36,62 @@ const Login = () => {
     return mergedSchedule;
   };
 
+
+
+  ///function
+  const handleChange = (e) => {
+    setSearch(e.target.value)
+  };
+
+  const fetchRoutine = async()=>{
+    axios
+    .get(`http://127.0.0.1:3000/api/section/fullroutine/${search}`)
+    .then((res) => {
+        setSchedule(res.data.rows);
+        console.log(res.data.rows);
+    })
+    .catch((error) => {
+        console.error("Error fetching data:", error);
+    });
+  }
+  const handleSearch = async (e) => {
+    setshow(0);
+    await fetchRoutine();
+    setshow(1);
+  }
   return (
-    <div className="min-h-screen bg-gradient-to-r from-black via-indigo-900 to-slate-800 flex items-center justify-center p-4 sm:p-8">
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl shadow-blue-700">
+    <div className="bg-gradient-to-r from-black via-indigo-900 to-slate-800">
+    <Nav1/>
+
+    <div className="add justify-center mt-2  items-center flex mx-[250px]">
+          <input 
+            name={search}
+            value={search}
+            onChange={handleChange}
+            type="text"
+            className="mx-2 px-2 min-h-[70px] min-w-[400px] my-1 bg-white rounded-2xl"
+          />
+          <button
+            onClick={handleSearch}
+            disabled={search.length < 3}
+            className="bg-gradient-to-r from-black via-indigo-600 to-slate-900 text-white disabled:bg-green-950 hover:bg-green-800  rounded-2xl h-[60px] py-2 px-3 mt-[9px]"
+          >
+            Save
+          </button>
+        </div>
+
+
+  <div className="min-h-screen  flex items-center justify-center p-4 sm:p-8">
+   {show == 0 &&(
+    <div className="font-bold flex justify-center text-slate-300 font-serif size-5 w-full opacity-45">
+      Enter Section to Search
+    </div>
+   )}
+   
+    {show == 1 &&(
+      <div> 
+
+<div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl shadow-blue-700">
         <h1 className="text-2xl font-bold text-center text-slate-700 font-serif bg-blue-300 py-4">
           Class Schedule
         </h1>
@@ -90,8 +136,14 @@ const Login = () => {
           </table>
         </div>
       </div>
+
+      </div>
+    )}
+      
+    </div>
     </div>
   );
+  
 };
 
 export default Login;
