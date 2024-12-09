@@ -31,7 +31,7 @@ CREATE TABLE section(
 );
 
 CREATE TABLE classroom(
-	room varchar(10) NOT NULL  PRIMARY KEY,
+	room varchar(100) NOT NULL  PRIMARY KEY,
 	capacity integer,
 	projector boolean,
 	mic boolean,

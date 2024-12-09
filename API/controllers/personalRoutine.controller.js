@@ -3,7 +3,6 @@ import pool from "../db.js";
 //authorizeentication
 
 const personalRoutine = async (req, res) => {
-  //   const { section  } = req.body;
 
   const st_id = req.user.id;
 
