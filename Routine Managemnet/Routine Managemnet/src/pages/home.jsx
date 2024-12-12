@@ -25,11 +25,12 @@ const Login = () => {
       if (classItem) {
         mergedSchedule.push({
           subject: `${classItem.code}, ${classItem.room}`,
+          faculty: `${classItem.faculty}`,
           colspan: classItem.count,
         });
         i += classItem.count; // Skip the spanned periods
       } else {
-        mergedSchedule.push({ subject: 'Null', colspan: 1 });
+        mergedSchedule.push({ subject: '-', colspan: 1 });
         i++;
       }
     }
@@ -40,12 +41,15 @@ const Login = () => {
 
   ///function
   const handleChange = (e) => {
+     setshow(0);
     setSearch(e.target.value)
   };
 
   const fetchRoutine = async()=>{
+    let inp = search.toUpperCase()
+    console.log(inp)
     axios
-    .get(`http://127.0.0.1:3000/api/section/fullroutine/${search}`)
+    .get(`http://127.0.0.1:3000/api/section/fullroutine/${inp}`)
     .then((res) => {
         setSchedule(res.data.rows);
         console.log(res.data.rows);
@@ -60,7 +64,7 @@ const Login = () => {
     setshow(1);
   }
   return (
-    <div className="bg-gradient-to-r from-black via-indigo-900 to-slate-800">
+    <div className="bg-[#D4EBF8]">
     <Nav1/>
 
     <div className="add justify-center mt-2  items-center flex mx-[250px]">
@@ -69,14 +73,14 @@ const Login = () => {
             value={search}
             onChange={handleChange}
             type="text"
-            className="mx-2 px-2 min-h-[70px] min-w-[400px] my-1 bg-white rounded-2xl"
+            className="mx-2 px-2 min-h-[70px] min-w-[400px] my-1 bg-[#fff5e1] text-[#0A3981]  rounded-2xl"
           />
           <button
             onClick={handleSearch}
-            disabled={search.length < 3}
-            className="bg-gradient-to-r from-black via-indigo-600 to-slate-900 text-white disabled:bg-green-950 hover:bg-green-800  rounded-2xl h-[60px] py-2 px-3 mt-[9px]"
+            disabled={search.length < 3 || search.length > 4}
+            className="bg-[#1F509A] text-white disabled:bg-green-950 hover:bg-green-800  rounded-2xl h-[60px] py-2 px-3 mt-[9px]"
           >
-            Save
+            Search
           </button>
         </div>
 
@@ -91,13 +95,13 @@ const Login = () => {
     {show == 1 &&(
       <div> 
 
-<div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl shadow-blue-700">
-        <h1 className="text-2xl font-bold text-center text-slate-700 font-serif bg-blue-300 py-4">
-          Class Schedule
+<div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl shadow-[#0A3981]">
+        <h1 className="text-2xl font-bold text-center text-slate-200 font-serif bg-[#0A3981] py-4">
+          Class Schedule of {search}
         </h1>
         <div className="overflow-x-auto">
           <table className="table-auto w-full text-left border-collapse">
-            <thead className="bg-indigo-900 text-white">
+            <thead className="bg-[#E38E49] text-white">
               <tr>
                 <th className="p-4 border border-black">Day</th>
                 {classes.map((classNumber, index) => (
@@ -115,7 +119,7 @@ const Login = () => {
                     key={day}
                     className={`${
                       dayIndex % 2 === 0
-                        ? 'bg-gradient-to-r from-gray-400 via-gray-300 to-gray-50'
+                        ? 'bg-gradient-to-r from-[#D4EBF8] via-gray-[#1F509A] to-[#0A3981]'
                         : 'bg-gradient-to-r to-gray-400 via-gray-300 from-gray-50'
                     } hover:bg-blue-100`}
                   >
@@ -126,7 +130,8 @@ const Login = () => {
                         colSpan={item.colspan}
                         className="p-4 text-gray-600 border border-black"
                       >
-                      <div className="flex justify-center items-center">  {item.subject}</div>
+                      <div className="flex text-black text-[15px] justify-center items-center ">  {item.subject} </div>
+                      <div className="flex text-black text-[10px] justify-center items-center ">  {item.faculty}</div>
                       </td>
                     ))}
                   </tr>
