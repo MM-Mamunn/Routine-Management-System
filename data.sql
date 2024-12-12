@@ -816,3 +816,327 @@ VALUES
 ('CSE-4877', '301', '7CM', 4, 6, 'NUA_Adj'),
 ('CSE-4877', '301', '7CM', 5, 6, 'NUA_Adj'),
 ('CSE-4877', '301', '7CM', 6, 6, 'NUA_Adj');
+
+
+
+
+-- Insert Missing values first
+
+-- INSERT INTO faculty(code)
+-- VALUES ('MMR_ADJ')
+-- INSERT INTO faculty (code)
+-- VALUES ('HBF_ADJ')
+-- INSERT INTO faculty (code)
+-- VALUES ('MMF_MDP')
+-- INSERT INTO faculty (code)
+-- VALUES ('MIU_ADJ')
+-- INSERT INTO faculty (code)
+-- VALUES ('MSA_MDP')
+-- INSERT INTO faculty (code)
+-- VALUES ('SI_ADJ')
+-- INSERT INTO faculty (code)
+-- VALUES ('DAZ_CGED')
+-- INSERT INTO faculty (code)
+-- VALUES ('SS_ADJ')
+-- INSERT INTO faculty (code)
+-- VALUES ('MSI_MDP')
+-- INSERT INTO faculty (code)
+-- VALUES ('MMF_ADJ')
+-- INSERT INTO faculty (code)
+-- VALUES ('MSH')
+-- INSERT INTO faculty (code)
+-- VALUES ('MAR_CGED')
+-- INSERT INTO faculty (code)
+-- VALUES ('AMA_ADJ')
+-- INSERT INTO faculty (code)
+-- VALUES ('AI_ADJ')
+-- INSERT INTO faculty (code)
+-- VALUES ('NT_BNG')
+-- INSERT INTO faculty (code)
+-- VALUES ('AA_ADJ')
+-- INSERT INTO faculty (code)
+-- VALUES ('MAR_IND')
+
+-- INSERT INTO course(code)
+-- VALUES ('MDP-1202')
+-- INSERT INTO course(code)
+-- VALUES ('URED-3523')
+-- INSERT INTO course(code)
+-- VALUES ('URED-3503')
+-- INSERT INTO course(code)
+-- VALUES ('MDP-3505')
+-- INSERT INTO course(code)
+-- VALUES ('CSE-3625')
+-- INSERT INTO course(code)
+-- VALUES ('CSE-3606')
+-- INSERT INTO classroom(room)
+-- values('CXB210')
+
+
+
+-- Remember 
+-- Room name format supported only
+-- C201
+-- CX404
+-- CXB205
+
+
+INSERT INTO "class" (faculty, room, sec, slot, "day", code)
+VALUES
+-- SUNDAY 1AM
+('SHR', 'CX403', '1AM', 2, 0, 'EEE-1121'),
+('SHR', 'CX403', '1AM', 3, 0, 'EEE-1121'),
+('AAM_ADJ', 'CX202', '1AM', 4, 0, 'PHY-1101'),
+('AAM_ADJ', 'CX202', '1AM', 5, 0, 'PHY-1101'),
+-- SUNDAY 1BM
+('AAM_ADJ', 'CX302', '1BM', 1, 0, 'PHY-1101'),
+('AAM_ADJ', 'CX302', '1BM', 2, 0, 'PHY-1101'),
+('MMA_ADJ', 'CX302', '1BM', 3, 0, 'CSE-1121'),
+('DMHK_CGED', 'CX403', '1BM', 5, 0, 'UREM-1101'),
+('HA_CGED', 'CX403', '1BM', 6, 0, 'UREL-1106'),
+-- SUNDAY 1CM
+('AZUR_ADJ', 'C301', '1CM', 1, 0, 'CSE-1121'),
+('SHR', 'CX203', '1CM', 4, 0, 'EEE-1122'),
+('SHR', 'CX203', '1CM', 5, 0, 'EEE-1122'),
+('SHR', 'CX203', '1CM', 6, 0, 'EEE-1122'),
+-- SUNDAY 1DM
+('HA_CGED', 'CXB204', '1DM', 2, 0, 'UREL-1106'),
+('HA_CGED', 'CXB204', '1DM', 3, 0, 'UREL-1106'),
+('AZUR_ADJ', 'C402', '1DM', 4, 0, 'CSE-1121'),
+('AZUR_ADJ', 'C402', '1DM', 5, 0, 'CSE-1121'),
+-- SUNDAY 1EM
+('AS', 'CX504', '1EM', 2, 0, 'CSE-1121'),
+('AAM_ADJ', 'CX504', '1EM', 3, 0, 'PHY-1101'),
+('MMH_ADJ', 'CXB202', '1EM', 4, 0, 'MATH-1107'),
+('MMH_ADJ', 'CXB202', '1EM', 5, 0, 'MATH-1107'),
+-- SUNDAY 1FM
+('MMR_ADJ', 'C103', '1FM', 1, 0, 'MATH-1107'),
+('MMR_ADJ', 'C103', '1FM', 2, 0, 'MATH-1107'),
+('HA_CGED', 'CXB103', '1FM', 4, 0, 'UREL-1106'),
+('HA_CGED', 'CXB103', '1FM', 5, 0, 'UREL-1106'),
+('DMHK_CGED', 'CXB103', '1FM', 6, 0, 'UREM-1101'),
+-- SUNDAY 1GM
+('SIB_ADJ', 'CX505', '1GM', 3, 0, 'EEE-1121'),
+('SIB_ADJ', 'CX304', '1GM', 4, 0, 'EEE-1122'),
+('SIB_ADJ', 'CX304', '1GM', 5, 0, 'EEE-1122'),
+('SIB_ADJ', 'CX304', '1GM', 6, 0, 'EEE-1122'),
+-- SUNDAY 2AM
+('KTS', 'C502', '2AM', 1, 0, 'CSE-1221'),
+('KTS', 'C502', '2AM', 2, 0, 'CSE-1221'),
+('DMMH', 'C502', '2AM', 3, 0, 'PHY-1201'),
+('JAA', 'C101', '2AM', 4, 0, 'CSE-1230'),
+('JAA', 'C101', '2AM', 5, 0, 'CSE-1230'),
+('AZUR_ADJ', 'C402', '2AM', 6, 0, 'CSE-1223'),
+-- SUNDAY 2BM
+('DMMH', 'C402', '2BM', 1, 0, 'EEE-1221'),
+('DMMH', 'C402', '2BM', 2, 0, 'EEE-1221'),
+('MMR_ADJ', 'C402', '2BM', 3, 0, 'MATH-1207'),
+('MSA', 'C201', '2BM', 4, 0, 'CSE-1230'),
+('MSA', 'C201', '2BM', 5, 0, 'CSE-1230'),
+('HBF_ADJ', 'C103', '2BM', 6, 0, 'CSE-1221'),
+-- SUNDAY 2CM
+('MMH_ADJ', 'CX102', '2CM', 1, 0, 'MATH-1207'),
+('MMH_ADJ', 'CX102', '2CM', 2, 0, 'MATH-1207'),
+('HBF_ADJ', 'CX102', '2CM', 3, 0, 'CSE-1221'),
+('MUA_IND', 'C301', '2CM', 4, 0, 'CSE-1230'),
+('MUA_IND', 'C301', '2CM', 5, 0, 'CSE-1230'),
+-- SUNDAY 2DM
+('MMF_MDP', 'CX101', '2DM', 1, 0, 'MDP-1202'),
+('AZUR_ADJ', 'CX101', '2DM', 2, 0, 'CSE-1223'),
+('AZUR_ADJ', 'CX101', '2DM', 3, 0, 'CSE-1223'),
+('MMA_ADJ', 'C401', '2DM', 4, 0, 'CSE-1230'),
+('MMA_ADJ', 'C401', '2DM', 5, 0, 'CSE-1230'),
+-- SUNDAY 2EM
+('SIB_ADJ', 'CX404', '2EM', 1, 0, 'EEE-1221'),
+('SIB_ADJ', 'CX404', '2EM', 2, 0, 'EEE-1221'),
+('KTS', 'C103', '2EM', 3, 0, 'CSE-1221'),
+('MUR', 'C501', '2EM', 4, 0, 'CSE-1230'),
+('MUR', 'C501', '2EM', 5, 0, 'CSE-1230'),
+('MMF_MDP', 'C501', '2EM', 6, 0, 'MDP-1202'),
+-- SUNDAY 2FM
+('MMF_MDP', 'C501', '2FM', 2, 0, 'MDP-1202'),
+('MA', 'CX104', '2FM', 3, 0, 'CSE-1221'),
+('MKIS', 'CX201', '2FM', 4, 0, 'CSE-1230'),
+('MKIS', 'CX201', '2FM', 5, 0, 'CSE-1230'),
+('MA', 'CX404', '2FM', 6, 0, 'CSE-1223'),
+-- SUNDAY 2GM
+('MA', 'CX202', '2GM', 1, 0, 'CSE-1223'),
+('MA', 'CX202', '2GM', 2, 0, 'CSE-1223'),
+('ASC_ADJ', 'CX202', '2GM', 3, 0, 'CSE-1221'),
+('MR', 'CX204', '2GM', 4, 0, 'CSE-1230'),
+('MR', 'CX204', '2GM', 5, 0, 'CSE-1230'),
+('MSA_MDP', 'CX204', '2GM', 6, 0, 'MDP-1202'),
+-- SUNDAY 3AM
+('SI_ADJ', 'C503', '3AM', 1, 0, 'CHEM-2301'),
+('SI_ADJ', 'C503', '3AM', 2, 0, 'CHEM-2301'),
+('SI_ADJ', 'C503', '3AM', 3, 0, 'CHEM-2301'),
+('SS_ADJ', 'CX301', '3AM', 4, 0, 'CSE-2324'),
+('SS_ADJ', 'CX301', '3AM', 5, 0, 'CSE-2324'),
+('SS_ADJ', 'CX301', '3AM', 6, 0, 'CSE-2324'),
+-- SUNDAY 3BM
+('SAI', 'CX501', '3BM', 1, 0, 'CSE-2323'),
+('SAI', 'CX501', '3BM', 2, 0, 'CSE-2323'),
+('JAA', 'CX501', '3BM', 3, 0, 'CSE-2321'),
+('SI_ADJ', 'CXB101', '3BM', 4, 0, 'CHEM-2301'),
+('SI_ADJ', 'CXB101', '3BM', 5, 0, 'CHEM-2301'),
+('SI_ADJ', 'CXB101', '3BM', 6, 0, 'CHEM-2301'),
+-- SUNDAY 3CM
+('SS_ADJ', 'CXB101', '3CM', 1, 0, 'CSE-2323'),
+('MJI_CGED', 'CXB101', '3CM', 2, 0, 'URED-2302'),
+('MSI_MDP', 'CXB101', '3CM', 3, 0, 'MDP-2303'),
+('DMMA', 'CX102', '3CM', 5, 0, 'STAT-2311'),
+('DMMA', 'CX102', '3CM', 6, 0, 'STAT-2311'),
+-- SUNDAY 3DM
+('MRM_ADJ', 'C505', '3DM', 1, 0, 'CSE-2323'),
+('MRM_ADJ', 'C505', '3DM', 2, 0, 'CSE-2323'),
+('MMU', 'C505', '3DM', 3, 0, 'CSE-2321'),
+('MMF_ADJ', 'CX402', '3DM', 4, 0, 'CSE-2340'),
+('MMF_ADJ', 'CX402', '3DM', 5, 0, 'CSE-2340'),
+('MMR_ADJ', 'CX202', '3DM', 6, 0, 'MATH-2307'),
+-- SUNDAY 3EM
+('MJI_CGED', 'CX104', '3EM', 1, 0, 'URED-2302'),
+('WBA_ADJ', 'CX602', '3EM', 2, 0, 'CSE-2340'),
+('WBA_ADJ', 'CX602', '3EM', 3, 0, 'CSE-2340'),
+('MNU_NSTU', 'CX501', '3EM', 4, 0, 'MATH-2307'),
+('MNU_NSTU', 'CX501', '3EM', 5, 0, 'MATH-2307'),
+('MNU_NSTU', 'CX501', '3EM', 6, 0, 'MATH-2307'),
+-- SUNDAY 3FM
+('MJI_CGED', 'CX103', '3FM', 3, 0, 'URED-2302'),
+('MSI_MDP', 'CX503', '3FM', 5, 0, 'MDP-2303'),
+-- SUNDAY 3GM
+('MSI_MDP', 'C504', '3GM', 1, 0, 'MDP-2303'),
+('DMMA', 'C504', '3GM', 2, 0, 'STAT-2311'),
+('DMMA', 'C504', '3GM', 3, 0, 'STAT-2311'),
+('MJI_CGED', 'CX102', '3GM', 4, 0, 'URED-2302'),
+('ASC_ADJ', 'CX602', '3GM', 5, 0, 'CSE-2322'),
+('ASC_ADJ', 'CX602', '3GM', 6, 0, 'CSE-2322'),
+-- SUNDAY 4AM
+('JAA', 'CX201', '4AM', 1, 0, 'CSE-2430'),
+('JAA', 'CX201', '4AM', 2, 0, 'CSE-2430'),
+('RZ', 'CX201', '4AM', 3, 0, 'CSE-2423'),
+('AS', 'CX302', '4AM', 4, 0, 'CSE-2421'),
+('AS', 'CX302', '4AM', 5, 0, 'CSE-2421'),
+('AS', 'CX302', '4AM', 6, 0, 'CSE-2421'),
+-- SUNDAY 4BM
+('MUA_IND', 'CX204', '4BM', 1, 0, 'CSE-2430'),
+('MUA_IND', 'CX204', '4BM', 2, 0, 'CSE-2430'),
+('AI_ADJ', 'C102', '4BM', 3, 0, 'CSE-2421'),
+('DMRK', 'CX103', '4BM', 5, 0, 'MATH-2407'),
+('DMRK', 'CX103', '4BM', 6, 0, 'MATH-2407'),
+-- SUNDAY 4CM
+('MMA_ADJ', 'C101', '4CM', 1, 0, 'CSE-2430'),
+('MMA_ADJ', 'C101', '4CM', 2, 0, 'CSE-2430'),
+('MUR', 'C101', '4CM', 3, 0, 'CSE-2423'),
+('AI_ADJ', 'CX504', '4CM', 4, 0, 'CSE-2427'),
+('AI_ADJ', 'CX504', '4CM', 5, 0, 'CSE-2427'),
+('NT_BNG1_CGED', 'CX504', '4CM', 6, 0, 'GEBL-2401'),
+-- SUNDAY 4DM
+('ASC_ADJ', 'C201', '4DM', 1, 0, 'CSE-2430'),
+('ASC_ADJ', 'C201', '4DM', 2, 0, 'CSE-2430'),
+('NT_BNG', 'C502', '4DM', 4, 0, 'GEBL-2401'),
+('YA', 'C502', '4DM', 5, 0, 'ACC-2401'),
+('YA', 'C502', '4DM', 6, 0, 'ACC-2401'),
+-- SUNDAY 4EM
+('MKIS', 'C402', '4EM', 1, 0, 'CSE-2430'),
+('MKIS', 'C402', '4EM', 2, 0, 'CSE-2430'),
+('AS', 'C402', '4EM', 3, 0, 'CSE-2421'),
+('AK_NSTU', 'C402', '4EM', 4, 0, 'MATH-2407'),
+('AK_NSTU', 'C402', '4EM', 5, 0, 'MATH-2407'),
+('AK_NSTU', 'C402', '4EM', 6, 0, 'MATH-2407'),
+-- SUNDAY 4FM
+('TR', 'C501', '4FM', 1, 0, 'CSE-2430'),
+('TR', 'C501', '4FM', 2, 0, 'CSE-2430'),
+('TR', 'CXB104', '4FM', 4, 0, 'CSE-2421'),
+('TR', 'CXB104', '4FM', 5, 0, 'CSE-2421'),
+('SAA', 'CXB104', '4FM', 6, 0, 'CSE-2427'),
+-- SUNDAY 5AM
+('AI', 'CX603', '5AM', 1, 0, 'CSE-3523'),
+('AI', 'CX603', '5AM', 2, 0, 'CSE-3523'),
+('DMMI', 'CX603', '5AM', 3, 0, 'CSE-3529'),
+('DAU', 'C503', '5AM', 4, 0, 'CSE-3521'),
+('DAZ_CGED', 'C503', '5AM', 5, 0, 'URED-3503'),
+('DAZ_CGED', 'C503', '5AM', 6, 0, 'URED-3503'),
+-- SUNDAY 5BM
+('DMMI', 'CX503', '5BM', 1, 0, 'CSE-3529'),
+('DMMI', 'CX503', '5BM', 2, 0, 'CSE-3529'),
+('AI', 'CX503', '5BM', 3, 0, 'CSE-3523'),
+('DAZ_CGED', 'C105', '5BM', 4, 0, 'URED-3503'),
+('WBA_ADJ', 'CXB210', '5BM', 5, 0, 'URED-3523'),
+('WBA_ADJ', 'CXB210', '5BM', 6, 0, 'URED-3523'),
+-- SUNDAY 5CM
+('MSH', 'CX601', '5CM', 1, 0, 'CSE-3527'),
+('MSH', 'CX601', '5CM', 2, 0, 'CSE-3528'),
+('MSH', 'CX601', '5CM', 3, 0, 'CSE-3528'),
+('MIU_ADJ', 'C504', '5CM', 4, 0, 'CSE-3521'),
+('MIU_ADJ', 'C504', '5CM', 5, 0, 'CSE-3521'),
+('JAA', 'C101', '5CM', 6, 0, 'MDP-3505'),
+-- SUNDAY 5DM
+('ABAK_IND', 'CX401', '5DM', 1, 0, 'CSE-3532'),
+('ABAK_IND', 'CX401', '5DM', 2, 0, 'CSE-3532'),
+('MAR_CGED', 'CX401', '5DM', 3, 0, 'URED-3503'),
+('ABAK_IND', 'CX401', '5DM', 4, 0, 'CSE-3532'),
+('ABAK_IND', 'CX401', '5DM', 5, 0, 'CSE-3532'),
+('MIU_ADJ', 'C504', '5DM', 6, 0, 'CSE-3521'),
+-- SUNDAY 5EM
+('MIU_ADJ', 'CXB202', '5EM', 1, 0, 'CSE-3521'),
+('MIU_ADJ', 'CXB202', '5EM', 2, 0, 'CSE-3521'),
+('MIU_ADJ', 'CXB202', '5EM', 3, 0, 'CSE-3521'),
+('HBF_ADJ', 'C102', '5EM', 4, 0, 'CSE-3527'),
+('HBF_ADJ', 'C102', '5EM', 5, 0, 'CSE-3527'),
+('MAR_CGED', 'C102', '5EM', 6, 0, 'URED-3503'),
+-- SUNDAY 6AM
+('ZA', 'CX502', '6AM', 2, 0, 'CSE-3631'),
+('ZA', 'CX502', '6AM', 3, 0, 'CSE-3631'),
+('AMA_ADJ', 'CX505', '6AM', 4, 0, 'CSE-3637'),
+('AMA_ADJ', 'CX505', '6AM', 5, 0, 'CSE-3637'),
+('AA_ADJ', 'CX505', '6AM', 6, 0, 'CSE-3525'),
+-- SUNDAY 6BM
+('AMA_ADJ', 'CX505', '6BM', 1, 0, 'CSE-3637'),
+('AMA_ADJ', 'CX505', '6BM', 2, 0, 'CSE-3637'),
+('ZA', 'CX601', '6BM', 4, 0, 'CSE-3632'),
+('ZA', 'CX601', '6BM', 5, 0, 'CSE-3632'),
+('ZA', 'CX601', '6BM', 6, 0, 'CSE-3631'),
+-- SUNDAY 6CM
+('MAR_IND', 'CXB210', '6CM', 1, 0, 'CSE-3638'),
+('MAR_IND', 'CXB210', '6CM', 1, 0, 'CSE-3640'),
+('MAR_IND', 'CXB210', '6CM', 2, 0, 'CSE-3638'),
+('MAR_IND', 'CXB210', '6CM', 2, 0, 'CSE-3640'),
+('MAR_IND', 'CXB210', '6CM', 3, 0, 'CSE-3638'),
+('MAR_IND', 'CXB210', '6CM', 3, 0, 'CSE-3640'),
+('MAR_IND', 'CX502', '6CM', 4, 0, 'CSE-3637'),
+('MAR_IND', 'CX502', '6CM', 5, 0, 'CSE-3637'),
+('MAR_IND', 'CX502', '6CM', 6, 0, 'CSE-3637'),
+-- SUNDAY 6DM
+('AA_ADJ', 'CXB104', '6DM', 1, 0, 'CSE-3625'),
+('AA_ADJ', 'CXB104', '6DM', 2, 0, 'CSE-3625'),
+('AA_ADJ', 'CXB104', '6DM', 3, 0, 'CSE-3625'),
+('MA', 'CX101', '6DM', 4, 0, 'CSE-3631'),
+('MA', 'CX101', '6DM', 5, 0, 'CSE-3631'),
+('MMU', 'CX101', '6DM', 6, 0, 'CSE-3606'),
+-- SUNDAY 7AM
+('MMU', 'C102', '7AM', 1, 0, 'CSE-4877'),
+('MMU', 'C102', '7AM', 2, 0, 'CSE-4877'),
+('RZ', 'CX604', '7AM', 4, 0, 'CSE-4741'),
+('RZ', 'CX604', '7AM', 5, 0, 'CSE-4742'),
+('RZ', 'CX604', '7AM', 6, 0, 'CSE-4742'),
+-- SUNDAY 7BM
+('MSA', 'C301', '7BM', 2, 0, 'CSE-4746'),
+('MSA', 'C301', '7BM', 3, 0, 'CSE-4746'),
+('MMU', 'CX404', '7BM', 4, 0, 'CSE-4877'),
+('MMU', 'CX404', '7BM', 5, 0, 'CSE-4877'),
+-- SUNDAY 7CM
+('SZK', 'C401', '7CM', 1, 0, 'CSE-3634'),
+('SZK', 'C401', '7CM', 2, 0, 'CSE-3634'),
+('SZK', 'C401', '7CM', 3, 0, 'CSE-3634'),
+('SZK', 'C505', '7CM', 5, 0, 'CSE-3633'),
+('SZK', 'C505', '7CM', 6, 0, 'CSE-3633'),
+-- SUNDAY 8AM
+('MMF_ADJ', 'CX604', '8AM', 1, 0, 'CSE-4845'),
+('MMF_ADJ', 'CX604', '8AM', 2, 0, 'CSE-4846'),
+('MMF_ADJ', 'CX604', '8AM', 3, 0, 'CSE-4846'),
+('MK', 'C103', '8AM', 4, 0, 'CSE-4875'),
+('MK', 'C103', '8AM', 5, 0, 'CSE-4875'),
+-- SUNDAY 8BM
+('DMMI', 'CX104', '8BM', 4, 0, 'CSE-4805'),
+('DMMI', 'CX104', '8BM', 5, 0, 'CSE-4805')
+
