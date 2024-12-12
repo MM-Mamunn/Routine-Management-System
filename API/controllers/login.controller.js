@@ -8,7 +8,9 @@ import {jwtGenerator} from '../utils/jwtGenerator.js';
 
 const login =async (req,res)=> {
   const { id, password } = req.body;
-
+  // console.log("login attempted");
+  // console.log(id,password);
+  
   try {
     if(!id || !password) 
         return res.status(401).json("Invalid Credential 1");

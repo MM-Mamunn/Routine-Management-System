@@ -5,7 +5,8 @@ import pool from "../db.js";
 const personalRoutine = async (req, res) => {
 
   const st_id = req.user.id;
-
+  console.log("Personal routine attepted by ",st_id);
+  
   try {
     const user = await pool.query(
       `select STRING_AGG(sec, ', ') AS sec,STRING_AGG(code, ', ') AS code, STRING_AGG(faculty, ', ') AS faculty,day, slot,STRING_AGG(room, ', ') AS room , STRING_AGG(class_id::TEXT, ', ') AS class_id from 
@@ -40,7 +41,8 @@ group by day , slot order by day , slot`,
 const Profile = async (req, res) => {
 
   const st_id = req.user.id;
-
+ console.log("profile attempted by ",st_id);
+ 
   try {
     const data = await pool.query(
       `select id, name, sec, phone, email from student where id = $1`,
