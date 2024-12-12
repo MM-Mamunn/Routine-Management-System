@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import axios from "axios";
+import Nav1 from "./components/Nav1";
 
 const HomePage = () => {
   const [profile, setProfile] = useState(null);
@@ -103,20 +104,21 @@ const HomePage = () => {
   }
   return (
     <div>
-      <h1>Home Page</h1>
+      <Nav1 />
+      <div className="m-2 flex  flex-col items-center justify-center">
+      <div className="flex  flex-col items-center bg-[#0A3981] p-2 rounded-lg">
+      <h1 className="bg-[#E38E49] inline-block rounded-md p-2 m-2">Home Page</h1>
       {profile ? (
-        <div>
-          <h2>Welcome, {profile.name}</h2>
-          <p>Email: {profile.email}</p>
+        <div className="flex flex-col justify-center items-center p-2 gap-2 bg-[#1F509A] m-2 w-[40vw] rounded-md">
+          <div className="border-2 w-[30vw] border-black  p-1 rounded-sm bg-[#D4EBF8]">Welcome, {profile.name}</div>
+          <div className="border-2 w-[30vw] border-black  p-1 rounded-sm bg-[#D4EBF8]">ID: {profile.id}</div>
         </div>
       ) : (
         <p>Loading...</p>
       )}
-
-<button onClick={handleLogout}>Logout</button>
-
-<p>-----------------</p>
-
+<button className="border-2  border-blue-950  px-2 py-1 disabled:bg-blue-900 rounded-lg bg-[#E38E49] m-2" onClick={handleLogout}>Logout</button>
+</div>
+</div>
 
 <div className="min-h-screen  flex items-center justify-center p-4 sm:p-8">
 

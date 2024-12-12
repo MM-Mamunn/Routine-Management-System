@@ -7,6 +7,9 @@ const Login = () => {
   const [show,setshow]= useState(0);
   const [search,setSearch] = useState("")
 
+  const [suggestions, setSuggestions] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
 
 }, []);
@@ -40,9 +43,39 @@ const Login = () => {
 
 
   ///function
-  const handleChange = (e) => {
+  // const handleLogout = () => {
+  //     Cookies.remove("jwtToken"); // Remove the JWT token from cookies
+  //     navigate("/"); // Redirect to login page
+  //   };
+  
+  
+  const handleChange = async(e) => {
      setshow(0);
-    setSearch(e.target.value)
+    
+     const value = e.target.value;
+     setSearch(value);
+ 
+     if (value.length >= 1 && value.length <= 4) {
+       setLoading(true);
+       try {
+         const response = await fetch(`http://localhost:3000/api/lookLike/sectionLookLike/${value}`);
+         if (response.ok) {
+           const data = await response.json();
+           const sections = data.rows.map((row) => row.sec);
+
+           setSuggestions(sections);
+         } else {
+           setSuggestions([]);
+         }
+       } catch (error) {
+         console.error("Error fetching suggestions:", error);
+         setSuggestions([]);
+       } finally {
+         setLoading(false);
+       }
+     } else {
+       setSuggestions([]);
+     }
   };
 
   const fetchRoutine = async()=>{
@@ -61,6 +94,7 @@ const Login = () => {
   const handleSearch = async (e) => {
     setshow(0);
     await fetchRoutine();
+    setSuggestions([]);
     setshow(1);
   }
   return (
@@ -68,21 +102,35 @@ const Login = () => {
     <Nav1/>
 
     <div className="add justify-center mt-2  items-center flex mx-[250px]">
-          <input 
-            name={search}
-            value={search}
-            onChange={handleChange}
-            type="text"
-            className="mx-2 px-2 min-h-[70px] min-w-[400px] my-1 bg-[#fff5e1] text-[#0A3981]  rounded-2xl"
-          />
-          <button
-            onClick={handleSearch}
-            disabled={search.length < 3 || search.length > 4}
-            className="bg-[#1F509A] text-white disabled:bg-green-950 hover:bg-green-800  rounded-2xl h-[60px] py-2 px-3 mt-[9px]"
+    <input
+        name="search"
+        value={search}
+        onChange={handleChange}
+        type="text"
+        className="mx-2 px-2 min-h-[70px] min-w-[400px] my-1 bg-[#fff5e1] text-[#0A3981] rounded-2xl"
+      />
+      <button
+        onClick={handleSearch}
+        disabled={search.length < 1 || search.length > 4}
+        className="bg-[#1F509A] text-white disabled:bg-green-950 hover:bg-green-800 rounded-2xl h-[60px] py-2 px-3 mt-[9px]"
+      >
+        Search
+      </button>
+      </div>
+      {loading && <p className="text-gray-500  ml-[35vw] mt-2">Loading suggestions...</p>}
+      {loading == 0 && (
+      <ul className="bg-[#fff5e1] mt-2 ml-[35vw] w-[20vw] rounded-2xl shadow-lg">
+        {suggestions.map((suggestion, index) => (
+          <li
+            key={index}
+            className="px-4 py-2 text-[#0A3981] hover:bg-[#fceec0] cursor-pointer"
+            onClick={() => {setSearch(suggestion); setSuggestions([]) }}
           >
-            Search
-          </button>
-        </div>
+            {suggestion}
+          </li>
+        ))}
+      </ul>
+      )}
 
 
   <div className="min-h-screen  flex items-center justify-center p-4 sm:p-8">

@@ -9,7 +9,7 @@ const courseLookLike = async (req, res) => {
     const courses = await pool.query(
       `SELECT * 
          FROM course
-         WHERE LOWER(code) LIKE '%' || LOWER($1) || '%'`,
+         WHERE LOWER(code) LIKE '%' || LOWER($1) || '%' LIMIT 5`,
       [course]
     );
     console.log("in");
@@ -30,7 +30,7 @@ const sectionLookLike = async (req, res) => {
     const sections = await pool.query(
       `SELECT * 
            FROM section
-           WHERE LOWER(sec) LIKE '%' || LOWER($1) || '%'`,
+           WHERE LOWER(sec) LIKE '%' || LOWER($1) || '%' LIMIT 5`,
       [section]
     );
 
@@ -49,7 +49,7 @@ const facultyLookLike = async (req, res) => {
     const faculties = await pool.query(
       `SELECT * 
            FROM faculty
-           WHERE LOWER(code) LIKE '%' || LOWER($1) || '%'`,
+           WHERE LOWER(code) LIKE '%' || LOWER($1) || '%' LIMIT 5`,
       [faculty]
     );
 
