@@ -7,7 +7,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:3000/api/section/fullroutine/1AM")
+      .get("http://127.0.0.1:3000/api/section/fullroutine/6BM")
       .then((res) => {
         console.log("API Response:", res.data); // Debug response
         setSchedule(res.data.rows || []);
