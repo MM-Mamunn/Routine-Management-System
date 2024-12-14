@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import Home from "./pages/home";
-import LoginPage from './pages/Login';
-import Logout from './pages/Logout';
 import HomePage from './pages/LoggedHome';
+import Logout from './pages/authentication/Logout';
+import LoginPage from './pages/authentication/Login';
+import RegistrationForm from './pages/authentication/RegistrationForm';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
@@ -18,8 +19,14 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<HomePage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/logout" element={<Logout />} />
+
+        <Route path="/auth">
+        <Route path="login" element={<LoginPage />} />
+        <Route path="logout" element={<Logout />} />
+        <Route path="reg" element={<RegistrationForm />} />
+        </Route>
+
+
             {/* <Route path="/home" element={<Home />} /> */}
             {/* 
             <Route path="/failed">

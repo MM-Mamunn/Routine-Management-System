@@ -9,9 +9,24 @@ const personalRoutine = async (req, res) => {
   
   try {
     const user = await pool.query(
-      `select STRING_AGG(sec, ', ') AS sec,STRING_AGG(code, ', ') AS code, STRING_AGG(faculty, ', ') AS faculty,day, slot,STRING_AGG(room, ', ') AS room , STRING_AGG(class_id::TEXT, ', ') AS class_id from 
-(select * from class natural join student_course where id = $1) as t
-group by day , slot order by day , slot`,
+      `SELECT 
+    STRING_AGG(sec, ', ' ORDER BY sec) AS sec,
+    STRING_AGG(code, ', ' ORDER BY code) AS code,
+    STRING_AGG(faculty, ', ' ORDER BY faculty) AS faculty,
+    day, 
+    slot,
+    STRING_AGG(room, ', ' ORDER BY room) AS room,
+    STRING_AGG(class_id::TEXT, ', ' ORDER BY class_id) AS class_id
+FROM (
+    SELECT * 
+    FROM class 
+    NATURAL JOIN student_course 
+    WHERE id = $1 
+    ORDER BY code, faculty
+) AS t
+GROUP BY day, slot
+ORDER BY day, slot;
+`,
       [st_id]
     );
     let final = [];

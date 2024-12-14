@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import Nav1 from "./components/Nav1";
+import Nav1 from "../components/Nav1";
 import axios from "axios";
 
 const LoginPage = () => {
