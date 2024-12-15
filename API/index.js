@@ -10,6 +10,7 @@ import login from "./routes/login.route.js";
 import courseLookLike from "./routes/LookLike.route.js";
 import sectionRoutine from "./routes/sectionRoutine.route.js";
 import  userProfile from "./routes/UserPersonal.route.js";
+import room from "./routes/Room.route.js";
 
 const app = express();
 const port = 3000;
@@ -29,7 +30,7 @@ app.use("/api/login", login);
 app.use("/api/section", sectionRoutine);
 app.use("/api/user", userProfile);
 app.use("/api/lookLike", courseLookLike);
-
+app.use("/api/room", room);
 // app.get('/data', async (req, res) => {
 //     try {
 //       // Perform a simple query to get all rows from a table

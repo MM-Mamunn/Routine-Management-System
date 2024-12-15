@@ -1140,3 +1140,40 @@ VALUES
 ('DMMI', 'CX104', '8BM', 4, 0, 'CSE-4805'),
 ('DMMI', 'CX104', '8BM', 5, 0, 'CSE-4805')
 
+
+
+---6BM Routine
+
+-- INSERT INTO faculty(code)
+-- VALUES ('MAT_CGED')
+
+-- INSERT INTO course(code)
+-- VALUES ('MDP-3606')
+
+INSERT INTO "class" (faculty, room, sec, slot, "day", code)
+VALUES
+-- MONDAY 6BM
+('AMA_ADJ', 'CX501', '6BM', 1, 1, 'CSE-3638'),
+('AMA_ADJ', 'CX501', '6BM', 1, 1, 'CSE-3640'),
+('AMA_ADJ', 'CX501', '6BM', 2, 1, 'CSE-3638'),
+('AMA_ADJ', 'CX501', '6BM', 2, 1, 'CSE-3640'),
+('AMA_ADJ', 'CX501', '6BM', 3, 1, 'CSE-3638'),
+('AMA_ADJ', 'CX501', '6BM', 3, 1, 'CSE-3640'),
+('MAT_CGED', 'CX504', '6BM', 4, 1, 'URED-3604'),
+('MAT_CGED', 'CX504', '6BM', 5, 1, 'URED-3604'),
+
+-- TUESDAY 6BM
+('DSA', 'CXB204', '6BM', 1, 2, 'ECON-3501'),
+('DSA', 'CXB204', '6BM', 2, 2, 'ECON-3501'),
+('SZK', 'CX102', '6BM', 4, 2, 'CSE-3525'),
+('SZK', 'CX102', '6BM', 5, 2, 'CSE-3525'),
+('MRI', 'CX102', '6BM', 6, 2, 'MDP-3606'),
+
+-- WEDNESDAY 6BM
+('SZK', 'CX505', '6BM', 1, 3, 'CSE-3525'),
+('MMH_CGED', 'CX505', '6BM', 2, 3, 'GEHE-3601'),
+('MMH_CGED', 'CX505', '6BM', 3, 3, 'GEHE-3601'),
+('ZA', 'CX101', '6BM', 4, 3, 'CSE-3631'),
+('ZA', 'CX101', '6BM', 5, 3, 'CSE-3631')
+
+---6BM end

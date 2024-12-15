@@ -9,7 +9,15 @@ const sectionRoutine = async (req, res) => {
   try {
     const user = await pool.query(
       `
-select STRING_AGG(sec, ', ') AS sec,STRING_AGG(code, ', ') AS code, STRING_AGG(faculty, ', ') AS faculty,day, slot,STRING_AGG(room, ', ') AS room , STRING_AGG(class_id::TEXT, ', ') AS class_id from 
+select
+STRING_AGG(sec, ', ' ORDER BY sec) AS sec,
+    STRING_AGG(code, ', ' ORDER BY code) AS code,
+    STRING_AGG(faculty, ', ' ORDER BY faculty) AS faculty,
+    day, 
+    slot,
+    STRING_AGG(room, ', ' ORDER BY room) AS room,
+    STRING_AGG(class_id::TEXT, ', ' ORDER BY class_id) AS class_id
+     from 
 (select * from class where sec = $1) as t
 group by day,slot order by day,slot`,
       [section]
