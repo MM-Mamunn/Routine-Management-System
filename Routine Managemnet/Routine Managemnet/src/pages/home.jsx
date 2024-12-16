@@ -48,9 +48,9 @@ const Home = () => {
           <table className="table-auto w-full text-left border-collapse">
             <thead className="bg-indigo-900 text-white">
               <tr>
-                <th className="p-4 border border-black">Time / Day</th>
+                <th className="p-4 border-[2px]  border-black">Time / Day</th>
                 {days.map((day, index) => (
-                  <th key={index} className="font-bold p-4 border border-black">
+                  <th key={index} className="font-bold p-4 border-[2px] border-black">
                     {day}
                   </th>
                 ))}
@@ -59,7 +59,7 @@ const Home = () => {
             <tbody>
               {slots.map((slot) => (
                 <tr key={slot}>
-                  <td className="p-3 border bg-gray-50 text-sm font-medium text-gray-500">
+                  <td className="p-3 border-[2px]  border-black bg-gray-50 text-sm font-medium text-gray-500">
                     {timeSlots[slot]}
                   </td>
                   {days.map((_, dayIndex) => {
@@ -75,7 +75,7 @@ const Home = () => {
                       <td
                         key={`${dayIndex}-${slot}`}
                         rowSpan={rowSpan}
-                        className="p-3 border bg-indigo-50 hover:bg-indigo-100 transition-colors"
+                        className="p-3 border-[2px]  border-black bg-indigo-50 hover:bg-indigo-100 transition-colors"
                       >
                         <div className="flex flex-col gap-1">
                           <div className="font-medium text-indigo-900">{classItem.code}</div>
@@ -93,7 +93,7 @@ const Home = () => {
                     ) : (
                       <td
                         key={`${dayIndex}-${slot}`}
-                        className="p-3 border text-center text-sm text-gray-400"
+                        className="p-3 border-[2px]  border-black text-center text-sm text-gray-400"
                       >
                         -
                       </td>
