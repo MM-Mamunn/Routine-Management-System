@@ -1,0 +1,12 @@
+.rms-logo {
+    font-size: 2.5rem; /* Increase font size for logo */
+    font-weight: bold; /* Make it bold */
+    font-family: 'Arial', sans-serif; /* Choose a clean font */
+    color: #e39700; /* Set a primary color */
+    text-shadow: 6px 6px 6px rgba(32, 9, 135, 0.804); /* Add a subtle shadow */
+    letter-spacing: 0.1em; /* Add some spacing between letters */
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    /* background-color: #f0f0f0; Optional: Add a background color */
+  }

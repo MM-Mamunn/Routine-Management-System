@@ -3,39 +3,43 @@ import Nav1 from "../components/Nav1";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
+
 const RegistrationForm = () => {
   const navigate = useNavigate();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [section, setSection] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
 
   const handleRegister = async () => {
-    // Handle registration logic here
     console.log({ id, password, name, section });
 
-
     try {
-        console.log("trying reg");
-        
-        const response = await axios.post("http://localhost:3000/api/register/new", {
-            id,
-            password,
-            name, 
-            section,
-        });
-        console.log("trying reg api called ");
-        const { jwtToken } = response.data;
-        console.log(jwtToken);
-        Cookies.remove("jwtToken");
-        Cookies.set("jwtToken", jwtToken, { expires: 1 }); // Save token in cookies for 1 day
-        console.log("Token saved:", jwtToken);
-        alert("Successfully Registered");
-        navigate("/auth/login"); 
-      } catch (error) {
-        console.error("Registration failed:", error);
-        alert("Invalid credentials or section not found");
-      }
+      console.log("trying reg");
+
+      const response = await axios.post("http://localhost:3000/api/register/new", {
+        id,
+        password,
+        name,
+        section,
+      });
+      console.log("trying reg api called ");
+      const { jwtToken } = response.data;
+      console.log(jwtToken);
+      Cookies.remove("jwtToken");
+      Cookies.set("jwtToken", jwtToken, { expires: 1 }); // Save token in cookies for 1 day
+      console.log("Token saved:", jwtToken);
+      alert("Successfully Registered");
+      navigate("/auth/login");
+    } catch (error) {
+      console.error("Registration failed:", error);
+      alert("Invalid credentials or section not found");
+    }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
   return (
@@ -52,13 +56,22 @@ const RegistrationForm = () => {
                 onChange={(e) => setId(e.target.value)}
                 className="mx-2 px-1 min-h-[70px] lg:min-w-[400px] my-1 bg-white rounded-2xl"
               />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="mx-2 px-1 min-h-[70px] lg:min-w-[400px] my-1 bg-white rounded-2xl"
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="mx-2 px-1 min-h-[70px] lg:min-w-[400px] my-1 bg-white rounded-2xl"
+                />
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-sm text-blue-950"
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
               <input
                 type="text"
                 placeholder="Name"

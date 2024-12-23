@@ -137,7 +137,7 @@ const RoomAvailability = () => {
               Available Rooms
             </h2>
             <div className="overflow-x-auto">
-              <table className="table-auto w-full text-left border-collapse">
+              <table className="table-auto w-full text-left border-collapse mb-4" >
                 <thead className="bg-orange-600 text-white">
                   <tr>
                     <th className="p-4 border border-black">Room Name</th>

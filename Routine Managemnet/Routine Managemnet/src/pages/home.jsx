@@ -135,7 +135,7 @@ const Login = () => {
 
   <div className="min-h-screen  flex items-center justify-center p-4 sm:p-8">
    {show == 0 &&(
-    <div className="font-bold flex justify-center text-slate-300 font-serif size-5 w-full opacity-45">
+    <div className="font-bold flex justify-center text-slate-400 font-serif size-5 w-full ">
       Enter Section to Search
     </div>
    )}

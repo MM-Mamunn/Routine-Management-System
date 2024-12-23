@@ -110,13 +110,16 @@ const HomePage = () => {
       <h1 className="bg-[#E38E49] inline-block rounded-md p-2 m-2">Home Page</h1>
       {profile ? (
         <div className="flex flex-col justify-center items-center p-2 gap-2 bg-[#1F509A] m-2 w-[40vw] rounded-md">
-          <div className="border-2 w-[30vw] border-black  p-1 rounded-sm bg-[#D4EBF8]">Welcome, {profile.name}</div>
-          <div className="border-2 w-[30vw] border-black  p-1 rounded-sm bg-[#D4EBF8]">ID: {profile.id}</div>
+          <div className="border-2 w-[30vw] border-black flex justify-center items-center p-1 rounded-sm bg-[#D4EBF8]">Welcome, {profile.name}</div>
+          <div className="flex w-[30vw] justify-center items-center " >
+          <div className="border-2 w-[30vw] ml-[] border-black flex justify-center items-center p-1 rounded-sm bg-[#D4EBF8]">ID: {profile.id}</div>
+          <div className="border-2 w-[30vw] border-black flex justify-center items-center p-1 rounded-sm bg-[#D4EBF8]">Section: {profile.sec}</div>
+          </div> 
+<button className="border-2  border-blue-950  px-2 py-1 disabled:bg-blue-900 rounded-lg bg-[#E38E49] m-[2px]" onClick={handleLogout}>Logout</button>
         </div>
       ) : (
         <p>Loading...</p>
       )}
-<button className="border-2  border-blue-950  px-2 py-1 disabled:bg-blue-900 rounded-lg bg-[#E38E49] m-2" onClick={handleLogout}>Logout</button>
 </div>
 </div>
 
