@@ -20,9 +20,12 @@ function App() {
       const token = Cookies.get("jwtToken");
       if (token) {
         try {
-          const response = await axios.get("http://localhost:3000/api/user/profile", {
-            headers: { jwtToken: token },
-          });
+          const response = await axios.get(
+            "${import.meta.env.VITE_URL}/api/user/profile",
+            {
+              headers: { jwtToken: token },
+            }
+          );
           if (response.data.rows[0]) {
             setIsLoggedIn(true);
           }
@@ -40,7 +43,10 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={isLoggedIn ? <Navigate to="/home" /> : <Home />} />
+          <Route
+            path="/"
+            element={isLoggedIn ? <Navigate to="/home" /> : <Home />}
+          />
           <Route path="/sectionwiseroutine" element={<Home />} />
           <Route path="/home" element={<HomePage />} />
 

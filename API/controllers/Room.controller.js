@@ -5,7 +5,6 @@ import pool from "../db.js";
 const RoomAvailability = async (req, res) => {
   const { day, slot, building } = req.params;
 
-  console.log("ROom check requested", day, slot);
 
   try {
     if (!slot || day < 0 || day > 6 || slot < 1 || slot > 6)

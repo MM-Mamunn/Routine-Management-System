@@ -18,12 +18,15 @@ const RegistrationForm = () => {
     try {
       console.log("trying reg");
 
-      const response = await axios.post("http://localhost:3000/api/register/new", {
-        id,
-        password,
-        name,
-        section,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_URL}/api/register/new`,
+        {
+          id,
+          password,
+          name,
+          section,
+        }
+      );
       console.log("trying reg api called ");
       const { jwtToken } = response.data;
       console.log(jwtToken);

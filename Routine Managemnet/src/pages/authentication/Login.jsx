@@ -12,10 +12,13 @@ const LoginPage = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/api/login", {
-        id,
-        password,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_URL}/api/login`,
+        {
+          id,
+          password,
+        }
+      );
       const { jwtToken } = response.data;
       console.log(jwtToken);
 

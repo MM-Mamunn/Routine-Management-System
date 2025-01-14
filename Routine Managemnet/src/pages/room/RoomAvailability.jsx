@@ -15,12 +15,14 @@ const RoomAvailability = () => {
         let response;
         if (building == null) {
           response = await axios.get(
-            `http://localhost:3000/api/room/available/${day}/${slot}`
+            `${import.meta.env.VITE_URL}/api/room/available/${day}/${slot}`
           );
         } else {
           console.log(building);
           response = await axios.get(
-            `http://localhost:3000/api/room/available/${day}/${slot}/${building}`
+            `${
+              import.meta.env.VITE_URL
+            }/api/room/available/${day}/${slot}/${building}`
           );
         }
         setRooms(response.data || []);
@@ -102,7 +104,9 @@ const RoomAvailability = () => {
             <select
               id="building"
               value={building !== null ? building : ""}
-              onChange={(e) => setBuilding(e.target.value === 'None' ? null : e.target.value)}
+              onChange={(e) =>
+                setBuilding(e.target.value === "None" ? null : e.target.value)
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
             >
               <option value="" disabled>
@@ -137,7 +141,7 @@ const RoomAvailability = () => {
               Available Rooms
             </h2>
             <div className="overflow-x-auto">
-              <table className="table-auto w-full text-left border-collapse mb-4" >
+              <table className="table-auto w-full text-left border-collapse mb-4">
                 <thead className="bg-orange-600 text-white">
                   <tr>
                     <th className="p-4 border border-black">Room Name</th>
