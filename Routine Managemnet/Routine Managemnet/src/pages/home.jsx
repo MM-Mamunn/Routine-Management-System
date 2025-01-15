@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { MapPin, User } from "lucide-react";
+import Nav1 from "./components/Nav1";
 
 const Home = () => {
   const [schedule, setSchedule] = useState([]);
@@ -17,7 +18,15 @@ const Home = () => {
       });
   }, []);
 
-  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   const slots = [1, 2, 3, 4, 5, 6];
   const timeSlots = {
     1: "10:30 AM - 11:20 AM",
@@ -29,7 +38,9 @@ const Home = () => {
   };
 
   // Create the grid
-  const routineGrid = Array(7).fill(null).map(() => Array(6).fill(null));
+  const routineGrid = Array(7)
+    .fill(null)
+    .map(() => Array(6).fill(null));
 
   // Populate the grid with the schedule
   schedule.forEach((classItem) => {
@@ -39,6 +50,8 @@ const Home = () => {
   });
 
   return (
+    <div>
+      <Nav1 /> 
     <div className="min-h-screen bg-gradient-to-r from-black via-indigo-900 to-slate-800 flex items-center justify-center p-4 sm:p-8">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-6xl shadow-blue-700">
         <h1 className="text-2xl font-bold text-center text-slate-700 font-serif bg-blue-300 py-4">
@@ -50,7 +63,10 @@ const Home = () => {
               <tr>
                 <th className="p-4 border-[2px]  border-black">Time / Day</th>
                 {days.map((day, index) => (
-                  <th key={index} className="font-bold p-4 border-[2px] border-black">
+                  <th
+                    key={index}
+                    className="font-bold p-4 border-[2px] border-black"
+                  >
                     {day}
                   </th>
                 ))}
@@ -78,7 +94,9 @@ const Home = () => {
                         className="p-3 border-[2px]  border-black bg-indigo-50 hover:bg-indigo-100 transition-colors"
                       >
                         <div className="flex flex-col gap-1">
-                          <div className="font-medium text-indigo-900">{classItem.code}</div>
+                          <div className="font-medium text-indigo-900">
+                            {classItem.code}
+                          </div>
                           <div className="flex items-center text-sm text-gray-600">
                             <User className="h-4 w-4 mr-1" />
                             {classItem.faculty}
@@ -87,12 +105,14 @@ const Home = () => {
                             <MapPin className="h-4 w-4 mr-1" />
                             {classItem.room}
                           </div>
-                          <div className="text-xs text-gray-500">Section: {classItem.sec}</div>
+                          <div className="text-xs text-gray-500">
+                            Section: {classItem.sec}
+                          </div>
                         </div>
                       </td>
                     ) : (
                       <td
-                        key={`${dayIndex}-${slot}`}
+                      key={`${dayIndex}-${slot}`}
                         className="p-3 border-[2px]  border-black text-center text-sm text-gray-400"
                       >
                         -
@@ -106,6 +126,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+</div>
   );
 };
 
