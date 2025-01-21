@@ -4,6 +4,7 @@ import pool from "../db.js";
 
 const personalRoutine = async (req, res) => {
   const st_id = req.user.id;
+  console.log("Personal routine attepted by ", st_id);
 
   try {
     const user = await pool.query(
@@ -51,44 +52,17 @@ ORDER BY day, slot;
   }
 };
 
-
-const Currentpersonalclass = async (req, res) => {
-  const st_id = req.user.id;
-  const day = req.params.slug1;
-  const slot = req.params.slug2;
-  console.log("day slot ",day,slot);
-  
-  
-  try {
-    const data = await pool.query(
-      `select * from
-(select * from class)
-as temp1
-join
-(select * from student_course where id = $1)
-as temp2
-on temp1.sec = temp2.sec and temp1.code = temp2.code
-where slot = $2 and day = $3
-`,
-      [st_id,slot,day]
-    );
-    
-    return res.status(200).json({ currentclass: data.rows });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server error");
-  }
-};
-
 const Profile = async (req, res) => {
   const st_id = req.user.id;
+  console.log("profile attempted by ", st_id);
+
   try {
     const data = await pool.query(
       `select id, name, sec, phone, email from student where id = $1`,
       [st_id]
     );
-    
-    return res.status(200).json(data.rows );
+
+    return res.status(200).json({ rows: data.rows });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
@@ -158,4 +132,4 @@ values
     res.status(500).send("Server error");
   }
 };
-export { personalRoutine, Profile, studentCourseInsert ,Currentpersonalclass};
+export { personalRoutine, Profile, studentCourseInsert };

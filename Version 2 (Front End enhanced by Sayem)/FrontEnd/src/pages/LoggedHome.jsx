@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import axios from "axios";
-import Nav1 from "./components/Nav1";
+import Header from "./components/Header";
 
 const HomePage = () => {
   const [profile, setProfile] = useState(null);
@@ -34,7 +34,7 @@ const HomePage = () => {
         console.log("data are ", response.data.rows[0]);
       } catch (error) {
         console.error("Failed to fetch profile:", error);
-        Cookies.remove("jwtToken"); // Remove invalid token
+        // Cookies.remove("jwtToken"); // Remove invalid token
         navigate("/"); // Redirect to login
       }
     };
@@ -114,27 +114,25 @@ const HomePage = () => {
   };
   return (
     <div>
-      <Nav1 />
-      <div className="m-2 flex  flex-col items-center justify-center">
-        <div className="flex  flex-col items-center bg-[#0A3981] p-2 rounded-lg">
-          <h1 className="bg-[#E38E49] inline-block rounded-md p-2 m-2">
-            Home Page
-          </h1>
+      <Header />
+      <div className="mt-4 flex flex-col items-center justify-center">
+        <div className="flex  flex-col items-center bg-purple-50 p-2 rounded-lg">
+          <h1 className="font-bold text-2xl">Profile</h1>
           {profile ? (
-            <div className="flex flex-col justify-center items-center p-2 gap-2 bg-[#1F509A] m-2 w-[40vw] rounded-md">
-              <div className="border-2 w-[30vw] border-black flex justify-center items-center p-1 rounded-sm bg-[#D4EBF8]">
+            <div className="flex flex-col justify-center items-center p-2 gap-2 m-2 w-[40vw] rounded-md">
+              <div className="px-6 border flex justify-center items-center p-1 rounded-sm bg-white">
                 Welcome, {profile.name}
               </div>
-              <div className="flex w-[30vw] justify-center items-center ">
-                <div className="border-2 w-[30vw] ml-[] border-black flex justify-center items-center p-1 rounded-sm bg-[#D4EBF8]">
+              <div className="flex justify-center items-center min-w-64 text-center">
+                <div className="border border-r-0 flex-1 justify-center items-center p-1 rounded-sm bg-white">
                   ID: {profile.id}
                 </div>
-                <div className="border-2 w-[30vw] border-black flex justify-center items-center p-1 rounded-sm bg-[#D4EBF8]">
+                <div className="border flex-1 justify-center items-center p-1 rounded-sm bg-white">
                   Section: {profile.sec}
                 </div>
               </div>
               <button
-                className="border-2  border-blue-950  px-2 py-1 disabled:bg-blue-900 rounded-lg bg-[#E38E49] m-[2px]"
+                className="h-8 border border-purple-600 hover:border-purple-500 text-purple-600 hover:bg-purple-500 transition-colors disabled:bg-gray-400 hover:text-white px-4 rounded cursor-pointer"
                 onClick={handleLogout}
               >
                 Logout
@@ -147,19 +145,19 @@ const HomePage = () => {
       </div>
 
       <div className="min-h-screen  flex items-center justify-center p-4 sm:p-8">
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-4xl shadow-[#0A3981]">
-          <h1 className="text-2xl font-bold text-center text-slate-200 font-serif bg-[#0A3981] py-4">
+        <div className="bg-white w-full max-w-4xl">
+          <h1 className="text-2xl font-bold text-center py-4 border rounded-t">
             Class Schedule
           </h1>
           <div className="overflow-x-auto">
             <table className="table-auto w-full text-left border-collapse">
-              <thead className="bg-[#E38E49] text-white">
+              <thead className="bg-purple-600 text-white">
                 <tr>
-                  <th className="p-4 border border-black">Day</th>
+                  <th className="p-4 border border-purple-800">Day</th>
                   {classes.map((classNumber, index) => (
                     <th
                       key={index}
-                      className="font-bold p-4 border border-black"
+                      className="font-bold p-4 border border-purple-800 whitespace-nowrap text-center"
                     >
                       {classNumber}
                     </th>
@@ -169,32 +167,25 @@ const HomePage = () => {
               <tbody>
                 {days.map((day, dayIndex) => {
                   const scheduleForDay = generateDaySchedule(day);
+                  if (dayIndex === 4 || dayIndex === 5) return;
                   return (
                     <tr
                       key={day}
                       className={`${
-                        dayIndex % 2 === 0
-                          ? "bg-gradient-to-r from-[#D4EBF8] via-gray-[#1F509A] to-[#0A3981]"
-                          : "bg-gradient-to-r to-gray-400 via-gray-300 from-gray-50"
-                      } hover:bg-blue-100`}
+                        dayIndex % 2 === 0 ? "bg-gray-100" : "bg-white"
+                      } hover:bg-purple-100`}
                     >
-                      <td className="p-4 text-gray-700 capitalize font-bold border border-black">
+                      <td className="p-4 text-gray-700 capitalize font-bold border border-gray-200">
                         {day}
                       </td>
                       {scheduleForDay.map((item, index) => (
                         <td
                           key={index}
                           colSpan={item.colspan}
-                          className="p-4 text-gray-600 border border-black"
+                          className="p-4 text-gray-600 border border-gray-200 text-center"
                         >
-                          <div className="flex text-black text-[15px] justify-center items-center ">
-                            {" "}
-                            {item.subject}{" "}
-                          </div>
-                          <div className="flex text-black text-[10px] justify-center items-center ">
-                            {" "}
-                            {item.faculty}
-                          </div>
+                          <p className="text-sm"> {item.subject} </p>
+                          <p className="text-xs mt-1"> {item.faculty}</p>
                         </td>
                       ))}
                     </tr>
